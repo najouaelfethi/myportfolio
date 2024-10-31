@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #141414;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  font-size: 30px;
+  color: #00f5d4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00f5d4;
+}
+
+.case-studies-button {
+  padding: 10px 20px;
+  color: #141414;
+  background-color: #00f5d4;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.case-studies-button:hover {
+  background-color: #00c3a0;
+}
+
+/* Hero Section Styling */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 150px 50px 50px;
+  background-color: #141414;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #00f5d4;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-content h2 {
+  font-size: 24px;
+  color: #00c3a0;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  max-width: 400px;
+}
+
+.hire-me-button {
+  padding: 10px 20px;
+  background-color: #00f5d4;
+  color: #141414;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.hire-me-button:hover {
+  background-color: #00c3a0;
+}
+
+/* Hero Image Styling */
+.hero-image img {
+  width: 300px;
+  border-radius: 50%;
+}
+
+</style>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <a href="#">NF</a> <!-- Replace with your logo or initials -->
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#aboutMe">About Me</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+      </ul>
+    </nav>
+    <a href="#resume" class="case-studies-button">My Resume</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <p>Hi There 👋 I'm</p>
+      <h1>Najoua Elfethi</h1>
+      <h2>Data Scientist + Software Engineer 👩🏾‍💻</h2>
+      <p>I specialize in creating data-driven applications and solutions. Below, you’ll find some of the projects I’ve worked on.</p>
+      <a href="#contact" class="hire-me-button">Hire Me</a>
+    </div>
+    <div class="hero-image">
+      <img src="software.png" alt="Profile Image"> 
+    </div>
+  </section>
+</body>
+</html>
