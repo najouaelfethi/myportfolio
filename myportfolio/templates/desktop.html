@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Desktop</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+  <!-- Desktop Background -->
+  <div class="desktop">
+    
+    <!-- First Column of Icons -->
+    <div class="icon-column">
+      <!--
+      <div class="icon" onclick="openApp('about')">
+        <img src="about-icon.png" alt="About Me">
+        <span>About Me</span>
+      </div>
+      -->
+      <div class="icon" onclick="openApp('github')"> 
+        <img src="{% static 'img/github.png' %}" alt="GitHub Icon">
+        <span>GitHub</span>
+      </div>
+      <div class="icon" onclick="openApp('experience')">
+        <img src="{% static 'img/experience.png' %}" alt="Experience Icon">
+        <span>Experience</span>
+      </div>
+      <div class="icon" onclick="openApp('education')">
+        <img src="{% static 'img/education.png' %}" alt="Education Icon">
+        <span>Education</span>
+      </div>
+      <div class="icon" onclick="openApp('projects')">
+        <img src="{% static 'img/projects.png' %}" alt="Projects Icon">
+        <span>Projects</span>
+      </div>
+    </div>
+    
+    <!-- Second Column of Icons -->
+    <div class="icon-column">
+      <div class="icon" onclick="openApp('resume')">
+        <img src="{% static 'img/resume.png' %}" alt="Resume Icon">
+        <span>Resume</span>
+      </div>
+      <div class="icon" onclick="openApp('email')">
+        <img src="{% static 'img/email.png' %}" alt="Email Icon">
+        <span>Email</span>
+      </div>
+    </div>
+    
+    <!-- App Windows -->
+    <div id="github" class="app-window" style="display: none;">
+      <div class="window-header">
+        <span>GitHub</span>
+        <button class="close-btn" onclick="closeApp('github')">✕</button>
+      </div>
+      <div class="window-content">
+        <h2>GitHub</h2>
+        <p>Check out my GitHub repositories and contributions.</p>
+        <a href="https://github.com/najouaelfethi" target="_blank">Visit my GitHub</a>
+      </div>
+    </div>
+    
+    <div id="projects" class="app-window" style="display: none;">
+      <div class="window-header">
+        <span>Projects</span>
+        <button class="close-btn" onclick="closeApp('projects')">✕</button>
+      </div>
+      <div class="window-content">
+        <h2>Projects</h2>
+        <p>Here are some of the projects I've worked on.</p>
+        <!-- Add project details here -->
+      </div>
+    </div>
+    
+    <div id="about" class="app-window" style="display: none;">
+      <div class="window-header">
+        <span>About Me</span>
+        <button class="close-btn" onclick="closeApp('about')">✕</button>
+      </div>
+      <div class="window-content">
+        <h2>About Me</h2>
+        <p>Hi, I'm a developer with experience in front-end and back-end development.</p>
+      </div>
+    </div>
+    
+    <div id="contact" class="app-window" style="display: none;">
+      <div class="window-header">
+        <span>Contact</span>
+        <button class="close-btn" onclick="closeApp('contact')">✕</button>
+      </div>
+      <div class="window-content">
+        <h2>Contact Me</h2>
+        <p>Get in touch via email or follow me on social media.</p>
+        <a href="mailto:your.email@example.com">Send an Email</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
