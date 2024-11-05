@@ -11,12 +11,12 @@
   <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="" type="image/x-icon">
 
   <!--
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="">
 
   <!--
     - google font link
@@ -313,21 +313,23 @@ border-radius: 20px;
 
 .info-content .name {
 color: #5B4C9A;
-font-size: var(--fs-3);
+font-size: var(--fs-2);
 font-weight: var(--fw-500);
 letter-spacing: -0.25px;
 margin-bottom: 10px;
 }
 
 .info-content .title {
-color:  #5B4C9A; /*junior ...*/
-background: linear-gradient(135deg, #d5c8f3, #f3d7d0);
-font-size: var(--fs-8);
-font-weight: var(--fw-300);
-width: max-content;
-padding: 3px 12px;
-border-radius: 8px;
+    color: #5B4C9A; /* Color for text */
+    background: linear-gradient(135deg, #d5c8f3, #f3d7d0); /* Gradient background */
+    font-size: var(--fs-9); /* Increased font size */
+    font-weight: var(--fw-500); /* Increased font weight */
+    width: max-content;
+    padding: 5px 12px; /* Slightly increased padding */
+    border-radius: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Added text shadow for better contrast */
 }
+
 
 .info_more-btn {
 position: absolute;
@@ -950,7 +952,7 @@ transition: var(--transition-1);
 .project-category { margin-left: 10px; }
 
 .project-title {
-color: var(--white-2);
+color: #5B4C9A;
 font-size: var(--fs-5);
 font-weight: var(--fw-400);
 text-transform: capitalize;
@@ -1190,25 +1192,10 @@ cursor: not-allowed;
 }
 
 
-
-
-
-/**
-* responsive larger than 580px screen
-*/
-
 @media (min-width: 580px) {
 
-/**
- * CUSTOM PROPERTY
- */
 
 :root {
-
-  /**
-   * typography
-   */
-
   --fs-1: 32px;
   --fs-2: 24px;
   --fs-3: 26px;
@@ -1770,7 +1757,11 @@ main {
 
 .sidebar-info { flex-direction: column; }
 
-.avatar-box img { width: 150px; }
+.avatar-box img { 
+  width: 200px; 
+  height: 200px;
+  margin: auto;
+}
 
 .info-content .name {
   white-space: nowrap;
@@ -1806,8 +1797,6 @@ main {
 
 .social-list { justify-content: center; }
 
-
-
 /**
    * RESUME
    */
@@ -1815,6 +1804,32 @@ main {
 .timeline-text { max-width: 700px; }
 
 }
+
+.resume-btn {
+    background-color:  #f3d7d0; /* Solid background color */
+    color: green; /* White text color for contrast */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex; /* Flexbox for aligning icon and text */
+    align-items: center; /* Center the icon and text vertically */
+}
+
+.resume-btn:disabled {
+    background-color: linear-gradient(135deg, #d5c8f3, #f3d7d0); /* Light grey background when disabled */
+    cursor: not-allowed; /* Not-allowed cursor for disabled state */
+}
+
+
+.resume-btn ion-icon {
+    margin-right: 5px; /* Spacing between icon and text */
+    font-size: 1.2em; /* Icon size */
+}
+
+
 </style>
 
 </head>
@@ -1828,7 +1843,7 @@ main {
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-            <img src="{% static 'img/me.png' %}" alt="Profile Icon"> 
+            <img src="{% static 'img/me.png' %}" alt="Profile Icon" > 
         </figure>
 
         <div class="info-content">
@@ -1921,8 +1936,6 @@ main {
 
 
 
-
-
     <!--
       - #main-content
     -->
@@ -1981,6 +1994,13 @@ main {
           <p>
             When I’m not coding, you can find me exploring the latest advancements in AI, diving into a good book, or enjoying a coffee! ☕
           </p>
+
+          <button class="resume-btn">
+            <a href="{% static 'docs/CV_NAJOUA_ELFETHI.pdf' %}" target="_blank">
+            <span>My Resume</span>
+          </a>
+          </button>
+
         </section>
 
         <section class="service">
@@ -1992,7 +2012,7 @@ main {
             <li class="service-item">
 
               <div class="service-icon-box">
-                <!--<img src="{% static 'img/dev.png' %}" alt="dev"> -->
+                <img src="{% static 'img/machine learning.png' %}" alt="machine learning" style="width:40px;"> 
               </div>
 
               <div class="service-content-box">
@@ -2008,7 +2028,7 @@ main {
             <li class="service-item">
 
                 <div class="service-icon-box">
-                <!--<img src="{% static 'img/dev.png' %}" alt="dev"> -->
+                  <img src="{% static 'img/deploymodel.png' %}" alt="model"  style="width:40px;"> 
             </div>
   
                 <div class="service-content-box">
@@ -2024,8 +2044,8 @@ main {
               <li class="service-item">
 
                 <div class="service-icon-box">
-                <!--<img src="{% static 'img/dev.png' %}" alt="dev"> -->
-            </div>
+                  <img src="{% static 'img/database.png' %}" alt="database" style="width:40px;"> 
+                </div>
   
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">Big Data</h4>
@@ -2040,7 +2060,7 @@ main {
             <li class="service-item">
 
               <div class="service-icon-box">
-                <!--<img src="{% static 'img/dev.png' %}" alt="dev"> -->
+                <img src="{% static 'img/bot.png' %}" alt="nlp" style="width:40px;"> 
             </div>
 
               <div class="service-content-box">
@@ -2056,7 +2076,7 @@ main {
             <li class="service-item">
 
               <div class="service-icon-box">
-                <!--<img src="{% static 'img/dev.png' %}" alt="dev"> -->
+                <img src="{% static 'img/analyse data.png' %}" alt="analyse data" style="width:40px;"> 
             </div>
 
               <div class="service-content-box">
@@ -2072,8 +2092,8 @@ main {
             <li class="service-item">
 
                 <div class="service-icon-box">
-                <!--<img src="{% static 'img/dev.png' %}" alt="dev"> -->
-            </div>
+                  <img src="{% static 'img/webscrapping.png' %}" alt="scrapping"  style="width:40px;"> 
+                </div>
   
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">Web Scrapping</h4>
@@ -2088,7 +2108,7 @@ main {
             <li class="service-item">
 
               <div class="service-icon-box">
-                <!--<img src="{% static 'img/dev.png' %}" alt="dev"> -->
+                <img src="{% static 'img/dev.png' %}" alt="dev" style="width:40px;"> 
             </div>
 
               <div class="service-content-box">
@@ -2117,10 +2137,10 @@ main {
 
             <div class="modal-img-wrapper">
               <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+                <img src="" alt="Daniel lewis" width="80" data-modal-img>
               </figure>
 
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+              <img src="" alt="quote icon">
             </div>
 
             <div class="modal-content">
@@ -2264,7 +2284,7 @@ main {
         </header>
 
         <section class="projects">
-
+<!--
           <ul class="filter-list">
 
             <li class="filter-item">
@@ -2288,7 +2308,7 @@ main {
             </li>
 
           </ul>
-
+-->
           <div class="filter-select-box">
 
             <button class="filter-select" data-select>
@@ -2328,9 +2348,9 @@ main {
           </div>
 
           <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+          <!--project 1-->
+            <li class="project-item  active" data-filter-item data-category="Machine Learning & AI">
+              <a href="https://github.com/najouaelfethi/Chatbot-Friends" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -2346,9 +2366,10 @@ main {
 
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+          
+            <!--project 2-->
+            <li class="project-item  active" data-filter-item data-category="Web Development">
+              <a href="https://github.com/najouaelfethi/phd-research-proposal-app" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -2365,128 +2386,78 @@ main {
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+            <!--project 3-->
+            <li class="project-item  active" data-filter-item data-category="Big Data">
+              <a href="https://github.com/najouaelfethi/SpakProject" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                  <img src="{% static 'img/apache spark.webp' %}" alt="apache spark"> 
                 </figure>
 
-                <h3 class="project-title">Fundo</h3>
+                <h3 class="project-title">Analyzing LinkedIn Job Postings with Apache Spark</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Big Data</p>
+
+              </a>
+            </li>
+    
+            <!--project 4 -->
+            <li class="project-item  active" data-filter-item data-category="Data Analytics">
+              <a href="https://github.com/najouaelfethi/LinkdInDataAnalytisis" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="{% static 'img/scrapping.png' %}" alt="Scrapping and analysing" style="width: 200px; height: auto; display: block; margin: auto;"> 
+                </figure>
+
+                <h3 class="project-title">LinkedIn Data Analysis</h3>
+
+                <p class="project-category">Web Scrapping</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+            <!--project 5-->
+            <li class="project-item  active" data-filter-item data-category="Machine Learning & AI">
+              <a href="https://github.com/najouaelfethi/MLProject" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                  <img src="{% static 'img/prediction.png' %}" alt="Prediction" style="width: 200px; height: auto; display: block; margin: auto;"> 
                 </figure>
 
-                <h3 class="project-title">Brawlhalla</h3>
+                <h3 class="project-title">Prediction of Care Costs and Hospital Mortality</h3>
 
-                <p class="project-category">Applications</p>
+                <p class="project-category">Machine Learning & AI</p>
 
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+ 
+            <!--project 6-->
+            <li class="project-item  active" data-filter-item data-category="Web Development">
+              <a href="https://github.com/najouaelfethi/Cybersecurity-Managment-System/tree/CyberSecurityProject" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                  <img src="{% static 'img/avancement.png' %}" alt="apache spark" > 
                 </figure>
 
-                <h3 class="project-title">MetaSpark</h3>
+                <h3 class="project-title">IT/OT Cybersecurity Managment System App</h3>
 
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
+                <p class="project-category">Web Development</p>
 
               </a>
             </li>
@@ -2514,184 +2485,42 @@ main {
         <section class="blog-posts">
 
           <ul class="blog-posts-list">
-
+            Coming soon!
+<!--
             <li class="blog-post-item">
               <a href="#">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                  <img src="" alt="" loading="...">
                 </figure>
 
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category">....</p>
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <time datetime="2022-02-23">...</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+                  <h3 class="h3 blog-item-title">...</h3>
 
                   <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                         ....
                   </p>
 
                 </div>
 
               </a>
             </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
+            -->
 
           </ul>
 
         </section>
 
       </article>
-
-
-
-
 
       <!--
         - #CONTACT
@@ -2703,17 +2532,8 @@ main {
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
 
         <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
 
           <form action="#" class="form" data-form>
 
@@ -2740,16 +2560,11 @@ main {
 
   </main>
 
-
-
-
-
-
   <!--
     - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
+  
+  <script src="{% static 'js/script.js' %}"></script>
+-->
   <!--
     - ionicon link
   -->
@@ -2916,7 +2731,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-  </script>
+</script>
 </body>
 
 </html>

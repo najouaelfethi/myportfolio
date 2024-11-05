@@ -28,4 +28,6 @@ function openApp(app) {
       selectedApp.style.display = 'none';
     }
   }
-  
+
+
+}
