@@ -735,7 +735,7 @@ margin-bottom: 7px;
 }
 
 .timeline-list span {
-color: var(--vegas-gold);
+color: green;
 font-weight: var(--fw-400);
 line-height: 1.6;
 }
@@ -747,7 +747,7 @@ top: -25px;
 left: -30px;
 width: 1px;
 height: calc(100% + 50px);
-background: var(--jet);
+background: green;
 }
 
 .timeline-item::after {
@@ -757,9 +757,9 @@ top: 5px;
 left: -33px;
 height: 6px;
 width: 6px;
-background: var(--text-gradient-yellow);
+background: green/*var(--text-gradient-yellow)*/;
 border-radius: 50%;
-box-shadow: 0 0 0 4px var(--jet);
+box-shadow: green;
 }
 
 .timeline-text {
@@ -1120,8 +1120,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 .form-btn {
 position: relative;
 width: 100%;
-background: var(--border-gradient-onyx);
-color: var(--orange-yellow-crayola);
+background: linear-gradient(135deg, #d5c8f3, #f3d7d0); 
+color: green;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -1139,7 +1139,7 @@ transition: var(--transition-1);
 content: "";
 position: absolute;
 inset: 1px;
-background: var(--bg-gradient-jet);
+background: linear-gradient(135deg, #d5c8f3, #f3d7d0); 
 border-radius: inherit;
 z-index: -1;
 transition: var(--transition-1);
@@ -1147,18 +1147,19 @@ transition: var(--transition-1);
 
 .form-btn ion-icon { font-size: 16px; }
 
-.form-btn:hover { background: var(--bg-gradient-yellow-1); }
+.form-btn:hover {     background: linear-gradient(135deg, #d5c8f3, #f3d7d0); /* Gradient background */
+}
 
-.form-btn:hover::before { background: var(--bg-gradient-yellow-2); }
+.form-btn:hover::before {background: linear-gradient(135deg, #d5c8f3, #f3d7d0); }
 
 .form-btn:disabled {
 opacity: 0.7;
 cursor: not-allowed;
 }
 
-.form-btn:disabled:hover { background: var(--border-gradient-onyx); }
+.form-btn:disabled:hover {     background: linear-gradient(135deg, #d5c8f3, #f3d7d0);}
 
-.form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
+.form-btn:disabled:hover::before {    background: linear-gradient(135deg, #d5c8f3, #f3d7d0);}
 
 
 
@@ -1829,6 +1830,114 @@ main {
     font-size: 1.2em; /* Icon size */
 }
 
+/*Certificates*/
+
+/* Style for the certificates article */
+.certificates {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.certificates header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.h2.article-title {
+  /*font-size: 2rem;*/
+  color: #5B4C9A;
+}
+
+/* Flexbox layout for the certificate items */
+.certificate-list {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.certificate-items {
+  display: flex;
+  gap: 20px; /* Space between each certificate item */
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* Individual certificate item styling */
+.certificate-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-width: 250px; 
+  max-width: 250px;
+  flex-shrink: 0;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.certificate-item:hover {
+  transform: scale(1.05);
+}
+
+.certificate-banner-box {
+  width: 100%;
+  height: 150px; /* Adjust height as needed */
+  overflow: hidden;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.certificate-banner-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.certificate-content {
+  padding: 15px;
+}
+
+.certificate-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.certificate-meta .dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #777;
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+.certificate-title {
+  font-size: 1rem;
+  color: #5B4C9A;
+  margin-top: 10px;
+}
+
+.certificate-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: green;
+  background-color: rgb(189, 249, 189);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
 
 </style>
 
@@ -1960,6 +2069,10 @@ main {
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Certificates</button>
           </li>
 
           <li class="navbar-item">
@@ -2469,9 +2582,86 @@ main {
       </article>
 
 
+    <!--
+    Certificates  
+    -->
+    
+    <article class="certificates" data-page="certificates">
 
+      <header>
+        <h2 class="h2 article-title">Certificates</h2>
+      </header>
+    
+      <section class="certificate-list">
+    
+        <ul class="certificate-items">
+          
+          <li class="certificate-item">
+            <a href="{% static 'docs/certificate1.pdf' %}" target="_blank">
+    
+              <figure class="certificate-banner-box">
+                <img src="{% static 'img/ctf1.png' %}" alt="certificate 1" > 
+              </figure>
+    
+              <div class="certificate-content">
+                <div class="certificate-meta">
+                  <p class="certificate-category">Machine Learning</p>
+                  <span class="dot"></span>
+                </div>
+    
+                <h3 class="h3 certificate-title">Exploratory Data Analysis for Machine Learning  - IBM </h3>
+    
+              </div>
+            </a>
+          </li>
+    
+          <li class="certificate-item">
+            <a href="{% static 'docs/certificate2.pdf' %}" target="_blank">
+    
+              <figure class="certificate-banner-box">
+                <img src="{% static 'img/ctf2.png' %}" alt="certificate 2" > 
+              </figure>
+    
+              <div class="certificate-content">
+                <div class="certificate-meta">
+                  <p class="certificate-category">Machine Learning</p>
+                  <span class="dot"></span>
+                </div>
+    
+                <h3 class="h3 certificate-title">Supervised Machine Learning: Regression  - IBM </h3>
+    
+              </div>
+            </a>
+          </li>
+    
+          
+          <li class="certificate-item">
+            <a href="{% static 'docs/certificate3.pdf' %}" target="_blank">
+    
+              <figure class="certificate-banner-box">
+                <img src="{% static 'img/ctf3.png' %}" alt="certificate 3" > 
+              </figure>
+    
+              <div class="certificate-content">
+                <div class="certificate-meta">
+                  <p class="certificate-category">Machine Learning</p>
+                  <span class="dot"></span>
+                </div>
+    
+                <h3 class="h3 certificate-title">Supervised Machine Learning: Classification - IBM </h3>
+    
+              </div>
+            </a>
+          </li>
 
+        </ul>
+    
+      </section>
+    
+    </article>
+    
 
+      
       <!--
         - #BLOG
       -->
@@ -2479,14 +2669,15 @@ main {
       <article class="blog" data-page="blog">
 
         <header>
-          <h2 class="h2 article-title">Blog</h2>
+          <h2 class="h2 article-title">Blogs</h2>
         </header>
 
         <section class="blog-posts">
+          Coming Soon !
 
+          <!--
           <ul class="blog-posts-list">
-            Coming soon!
-<!--
+
             <li class="blog-post-item">
               <a href="#">
 
@@ -2514,7 +2705,7 @@ main {
 
               </a>
             </li>
-            -->
+          -->
 
           </ul>
 
@@ -2529,13 +2720,14 @@ main {
       <article class="contact" data-page="contact">
 
         <header>
-          <h2 class="h2 article-title">Contact</h2>
+          <h2 class="h2 article-title">Get In Touch</h2>
         </header>
 
 
         <section class="contact-form">
 
-          <form action="#" class="form" data-form>
+          <form action="{% url 'send_email_view' %}" method ="POST" class="form" data-form>
+            {% csrf_token %}
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
@@ -2551,6 +2743,9 @@ main {
             </button>
 
           </form>
+          {% if success %}
+          <p class="success-message">Your message has been sent successfully!</p>
+          {% endif %}
 
         </section>
 
@@ -2731,6 +2926,8 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
 </script>
 </body>
 
