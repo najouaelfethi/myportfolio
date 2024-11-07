@@ -1179,8 +1179,8 @@ margin-bottom: 15px;*/
 }
 
 .form-input {
-  color: var(--white-2);
-  font-size: var(--fs-6);
+  color: #3d2e79;
+  font-size: var(--fs-20);
   font-weight: var(--fw-400);
   padding: 13px 20px;
   border: 1px solid var(--jet);
@@ -1193,7 +1193,7 @@ margin-bottom: 15px;*/
 }
 
 .form-input:focus {
-  border-color: var(--orange-yellow-crayola);
+  border-color: green;
 }
 
 textarea.form-input {
@@ -1209,7 +1209,7 @@ textarea.form-input::-webkit-resizer {
 }
 
 .form-input:focus:invalid {
-  border-color: var(--bittersweet-shimmer);
+  border-color: linear-gradient(135deg, #d5c8f3, #f3d7d0);
 }
 
 .form-btn {
